@@ -1,6 +1,7 @@
 // Verifica si el navegador soporta SpeechRecognition
 const startButton = document.getElementById('startButton');
 const transcription = document.getElementById('transcription');
+const languageSelect = document.getElementById('languageSelect'); // Selector de idioma
 let recognition;
 
 if ('webkitSpeechRecognition' in window) {
@@ -12,15 +13,15 @@ if ('webkitSpeechRecognition' in window) {
 }
 
 if (recognition) {
-    recognition.lang = 'en-EN'; // Establece el idioma a ingles
-    recognition.lang = 'es-ES'; // Establece el idioma a español
     recognition.continuous = true; // Mantener la transcripción continua
     recognition.interimResults = true; // Mostrar resultados intermedios
 
     startButton.addEventListener('click', () => {
         if (recognition) {
+            // Establece el idioma según el selector
+            recognition.lang = languageSelect.value; 
             recognition.start();
-            transcription.textContent = "Escuchando...";
+            transcription.textContent = "Listening, Escuchando...";
         }
     });
 
@@ -41,7 +42,7 @@ if (recognition) {
 
     // Manejo de errores
     recognition.onerror = (event) => {
-        transcription.textContent = "Transcription error: " + event.error;
+        transcription.textContent = "Transcription error, Transcripción error: " + event.error;
     };
 } else {
     startButton.disabled = true;
