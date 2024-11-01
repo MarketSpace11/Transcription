@@ -25,7 +25,7 @@ if (recognition) {
     startButton.addEventListener('click', () => {
         recognition.lang = languageSelect.value; // Configura el idioma antes de comenzar
         recognition.start();
-        transcription.textContent = "Escuchando...";
+        transcription.textContent = "Listening, Escuchando...";
     });
 
     // Evento cuando se detecta una nueva transcripción
@@ -45,7 +45,7 @@ if (recognition) {
 
     // Manejo de errores
     recognition.onerror = (event) => {
-        transcription.textContent = "Transcription error: " + event.error;
+        transcription.textContent = "Transcription error, Error de transcripción: " + event.error;
     };
 } else {
     startButton.disabled = true;
