@@ -8,12 +8,16 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="logo.png" alt="Logotipo"> <!-- Cambia 'tu_logo.png' por la ruta de tu logo -->
+        <img id="logo" src="logo.png" alt="Logotipo"> <!-- Cambia 'logo.png' por la ruta de tu logo -->
     </header>
     <div class="container">
         <h1>Real Time Transcription</h1>
-        <button id="startButton">Start</button>
-        <p id="transcription">Transcription...</p>
+        <select id="languageSelect">
+            <option value="es-ES">Español</option>
+            <option value="en-US">English</option>
+        </select>
+        <button id="startButton">Start, Comenzar</button>
+        <p id="transcription">Transcription, Transcripción...</p>
         <!-- Añadir contenido adicional para permitir el desplazamiento -->
         <div class="spacer"></div>
     </div>
