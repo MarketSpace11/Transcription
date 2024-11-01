@@ -42,7 +42,7 @@ if (recognition) {
 
     // Manejo de errores
     recognition.onerror = (event) => {
-        transcription.textContent = "Transcription error, Transcripción error: " + event.error;
+        transcription.textContent = "Transcription error, Error de Transcripción: " + event.error;
     };
 } else {
     startButton.disabled = true;
